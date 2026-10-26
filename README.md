@@ -1,7 +1,6 @@
 # TVH Meter Data Warehouse (SSIS + SQL Server)
 
-> One sentence: what this warehouse does and for whom.
-> Example: A nightly SSIS pipeline that turns four smart-meter vendor feeds and a customer
+> A nightly SSIS pipeline that turns four smart-meter vendor feeds and a customer
 > system into a trusted hourly energy-usage warehouse for a (fictional) Ontario utility.
 
 ![Architecture](docs/images/architecture.png)
