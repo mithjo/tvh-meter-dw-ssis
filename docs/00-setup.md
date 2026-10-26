@@ -38,7 +38,6 @@ Services, from `SELECT servicename, service_account, startup_type_desc, status_d
 | --- | --- | --- | --- | --- |
 | SQL Server (MSSQLSERVER) | `NT Service\MSSQLSERVER` | Automatic | Running | |
 | SQL Server Agent (MSSQLSERVER) | `NT Service\SQLSERVERAGENT` | Manual | Stopped | Set to Automatic and start it before scheduling jobs (Session 21) |
-| SQL Server Integration Services 16.0 | `NT Service\MsDtsServer160` | TODO | TODO | Not listed by `sys.dm_server_services`; check in SQL Server Configuration Manager |
 
 ## Folders and permissions
 
@@ -130,20 +129,6 @@ statutory holiday. These cases need extra hand-made tests later (Sessions 12, 15
 | Problem | Cause | Fix |
 | --- | --- | --- |
 | `'python' is not recognized as an internal or external command` | Python was installed without being added to PATH | `py --version` showed 3.11.3, so I run scripts with the `py` launcher instead of `python` |
-
-## Screenshots
-
-Visual Studio version:
-
-![Visual Studio 2026 Community 18.11.2](images/setup-vs-version.png)
-
-SSIS Projects extension installed (version 2.1.2):
-
-![Installed extensions](images/setup-vs-extensions.png)
-
-The Integration Services Project template is available in "Create a new project":
-
-![SSIS project template](images/setup-vs-ssis.png)
 
 SSMS connected to the instance (TODO: add screenshot):
 
