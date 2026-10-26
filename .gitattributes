@@ -1,0 +1,19 @@
+# SSIS packages and project files are XML; keep Windows line endings so
+# Visual Studio and Git agree and diffs stay readable.
+*.dtsx      text eol=crlf
+*.dtproj    text eol=crlf
+*.params    text eol=crlf
+*.conmgr    text eol=crlf
+*.sln       text eol=crlf
+*.sql       text eol=crlf
+*.ps1       text eol=crlf
+*.bat       text eol=crlf
+
+# Python and Markdown: LF works everywhere.
+*.py        text eol=lf
+*.md        text eol=lf
+
+# Binary files
+*.xlsx      binary
+*.pbix      binary
+*.png       binary

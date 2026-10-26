@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Head-end Lake interval file contract (fictional vendor, Trillium Valley Hydro).
+  'start' and 'generatedAt' are strings on purpose: they carry a UTC offset
+  (-04:00 or -05:00). Convert them in SSIS to DT_DBTIMESTAMPOFFSET, never to a
+  plain timestamp, or the repeated 01:00 hour on the fall-back day collides.
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="IntervalData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Meter" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Reading" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="start" type="xs:string" use="required"/>
+                  <xs:attribute name="minutes" type="xs:unsignedByte" use="required"/>
+                  <xs:attribute name="value" type="xs:decimal" use="required"/>
+                  <xs:attribute name="q" type="xs:string" use="required"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:string" use="required"/>
+            <xs:attribute name="uom" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="headEnd" type="xs:string" use="required"/>
+      <xs:attribute name="dataDate" type="xs:date" use="required"/>
+      <xs:attribute name="fileVersion" type="xs:unsignedByte" use="required"/>
+      <xs:attribute name="generatedAt" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

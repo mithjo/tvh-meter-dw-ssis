@@ -1,0 +1,19 @@
+# Visual Studio and SSIS build output
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.ispac
+
+# Generated data never goes to GitHub
+data/
+simulator/output/
+*.csv
+*.xml
+*.txt
+*.json
+!docs/**
+
+# Logs
+*.log
